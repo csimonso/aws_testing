@@ -97,8 +97,8 @@ public class GlobeSortServer {
             responseObserver.onCompleted();
 	  
             long diff = System.currentTimeMillis() - startTimeMillis;  
-            long time_seconds = diff/1000;
-	    System.out.println("Time Server Took To Sort = " + time_seconds +  " seconds");
+            long time_seconds = diff;
+	    System.out.println("Time Server Took To Sort = " + time_seconds +  " Milli-Seconds");
         }
     }
 }

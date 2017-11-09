@@ -43,7 +43,7 @@ public class GlobeSortClient {
         serverStub.ping(Empty.newBuilder().build());
   
         long ping_diff = System.currentTimeMillis() - ping_time_startMillis;
-        System.out.println("Ping Round Trip Time = " + (ping_diff/1000) + " seconds");        
+        System.out.println("Ping Round Trip Time = " + ping_diff + " Milli seconds");        
 
         System.out.println("Ping successful.");
 
@@ -54,8 +54,11 @@ public class GlobeSortClient {
 	long app_throughput_startTimeMillis = System.currentTimeMillis();
         IntArray response = serverStub.sortIntegers(request);
 	long diff = System.currentTimeMillis() - app_throughput_startTimeMillis;
-	long application_throughput = arr_size / (diff/1000);
-	System.out.println("Application Throughput for " + arr_size + " Integers = " + application_throughput + " seconds");
+        diff = diff;
+        System.out.println("Array Size = " + arr_size);
+        System.out.println("Sort RTT = " + diff + " Milli-Seconds");
+	long application_throughput = arr_size / diff;
+	System.out.println("Application Throughput for " + arr_size + " Integers = " + application_throughput + " Milli-Seconds");
 
         System.out.println("Sorted array");
     }
